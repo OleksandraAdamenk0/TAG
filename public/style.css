@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 512px;
+    height: 512px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-area {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.grid1 { grid-area: 1 / 1 / 2 / 2; }
+.grid2 { grid-area: 1 / 2 / 2 / 3; }
+.grid3 { grid-area: 1 / 3 / 2 / 4; }
+.grid4 { grid-area: 1 / 4 / 2 / 5; }
+.grid5 { grid-area: 2 / 1 / 3 / 2; }
+.grid6 { grid-area: 2 / 2 / 3 / 3; }
+.grid7 { grid-area: 2 / 3 / 3 / 4; }
+.grid8 { grid-area: 2 / 4 / 3 / 5; }
+.grid9 { grid-area: 3 / 1 / 4 / 2; }
+.grid10 { grid-area: 3 / 2 / 4 / 3; }
+.grid11 { grid-area: 3 / 3 / 4 / 4; }
+.grid12 { grid-area: 3 / 4 / 4 / 5; }
+.grid13 { grid-area: 4 / 1 / 5 / 2; }
+.grid14 { grid-area: 4 / 2 / 5 / 3; }
+.grid15 { grid-area: 4 / 3 / 5 / 4; }
+.grid16 { grid-area: 4 / 4 / 5 / 5; }
+
+.common-grid {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.common-grid:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+.grid-empty {
+    background-color: #535353;
+}
