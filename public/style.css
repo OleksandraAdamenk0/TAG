@@ -1,16 +1,48 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: 100% / 110% no-repeat url(photo/Rainbow_Dark.png);
+:root {
+    --main-text-color: #131313;
+    --secondary-text-color: #efefef;
+    --bg-img: url(photo/Rainbow_Light.png);
 }
 
-.header {
+:dark {
+    --main-text-color: #efefef;
+    --secondary-text-color: #efefef;
+    --bg-img: url(photo/Rainbow_Dark.png);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    color: var(--main-text-color, #000);
+    background: var(--bg-img, none) 0 / 150% 150% no-repeat;
+    animation: scroll-bg 20s linear infinite;
+}
+
+@keyframes scroll-bg {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+h1 {
+    display: none;
+}
+
+.win {
+    display: block;
+}
+
+.content {
     width: 100%;
     height: 100vh;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -41,14 +73,16 @@ body {
 
 .common-grid {
     background-color: #000;
-    color: #fff;
+    color: var(--secondary-text-color);
     font-size: 20px;
 
     border-radius: 10px;
+    transition: background-color 0.2s;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 2s ease;
 }
 
 .common-grid:hover {
@@ -58,4 +92,33 @@ body {
 
 #grid-empty {
     background-color: rgba(0, 0, 0, 0.35);
+}
+
+.btn {
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #6a11cb, #ffb347);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #ffb347, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(90deg, #6a11cb, #ffb347);
+}
+
+#restart {
+    display: none;
 }
