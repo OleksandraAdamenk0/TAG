@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background: 100% / 110% no-repeat url(photo/Rainbow_Dark.png);
+    font-family: 'Roboto';
 }
 
 .header {
