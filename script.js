@@ -15,7 +15,7 @@ function areCellsNeighbours(cell1, cell2) {
 }
 
 function isWin() {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 14; i++) {
         if (cells[i + 1] - cells[i] !== 1) {
             return false;
         }
